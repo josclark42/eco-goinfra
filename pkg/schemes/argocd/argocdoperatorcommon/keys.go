@@ -19,7 +19,17 @@ import (
 )
 
 const (
-	// ArgoCDKeyAdminEnabled is the configuration key for the admin enabled setting..
+
+	// ArgoCDKeyRespectRBAC is the configuration key for the respectRBAC setting.
+	ArgoCDKeyRespectRBAC = "resource.respectRBAC"
+
+	// ArgoCDValueRespectRBACStrict is the configuration value for the respectRBAC setting.
+	ArgoCDValueRespectRBACStrict = "strict"
+
+	// ArgoCDValueRespectRBACStrict is the configuration value for the respectRBAC setting.
+	ArgoCDValueRespectRBACNormal = "normal"
+
+	// ArgoCDKeyAdminEnabled is the configuration key for the admin enabled setting.
 	ArgoCDKeyAdminEnabled = "admin.enabled"
 
 	// ArgoCDKeyApplicationInstanceLabelKey is the configuration key for the application instance label.
@@ -33,9 +43,6 @@ const (
 
 	// ArgoCDKeyBackupKey is the "backup key" key for ConfigMaps.
 	ArgoCDKeyBackupKey = "backup.key"
-
-	// ArgoCDKeyConfigManagementPlugins is the configuration key for config management plugins.
-	ArgoCDKeyConfigManagementPlugins = "configManagementPlugins"
 
 	// ArgoCDKeyComponent is the resource component key for labels.
 	ArgoCDKeyComponent = "app.kubernetes.io/component"
@@ -121,12 +128,6 @@ const (
 	// ArgoCDKeyResourceTrackingMethod is the configuration key for resource tracking method
 	ArgoCDKeyResourceTrackingMethod = "application.resourceTrackingMethod"
 
-	// ArgoCDKeyRepositories is the configuration key for repositories.
-	ArgoCDKeyRepositories = "repositories"
-
-	// ArgoCDKeyRepositoryCredentials is the configuration key for repository.credentials.
-	ArgoCDKeyRepositoryCredentials = "repository.credentials"
-
 	// ArgoCDKeyServerSecretKey is the server secret key property name for the Argo secret.
 	ArgoCDKeyServerSecretKey = "server.secretkey"
 
@@ -171,6 +172,10 @@ const (
 	// ArgoCDImageEnvName is the environment variable used to get the image
 	// to used for the argocd container.
 	ArgoCDImageEnvName = "ARGOCD_IMAGE"
+
+	// ArgoCDExtensionImageEnvName is the environment variable used to get the image
+	// to be used for the Argo-CD extension image
+	ArgoCDExtensionImageEnvName = "ARGOCD_EXTENSION_IMAGE"
 
 	// ArgoCDKeycloakImageEnvName is the environment variable used to get the image
 	// to used for the Keycloak container.
@@ -217,4 +222,7 @@ const (
 
 	// Label Selector is an env variable for ArgoCD instance reconcilliation.
 	ArgoCDLabelSelectorKey = "ARGOCD_LABEL_SELECTOR"
+
+	// ArgoCDKeyInstallationID is the configuration key for the installation ID.
+	ArgoCDKeyInstallationID = "installationID"
 )
